@@ -1,18 +1,35 @@
+import { useState } from "react";
 import "./App.css";
+import Cart from "./components/Cart/Cart";
 import Meals from "./components/Meals/Meals";
-import Card from "./components/UI/Card";
 import Header from "./components/UI/Header";
 
+
 function App() {
+
+	const [showModal,setShowModal] = useState(false);
+
+	const headerButtonClickHandler = (event) =>{
+		setShowModal(true);
+	}
+
+	const cartButtonClickHandler = (event) =>{
+		setShowModal(false);
+	}
+
+
 	return (
+		<>
+		{showModal && <Cart onClick={cartButtonClickHandler}/>}
 		<div className="App">
 			<header className="App-header">
-				<Header />
+				<Header onClick={headerButtonClickHandler} />
 			</header>
 				<main className="App-main">
 					<Meals />
 				</main>
 		</div>
+		</>
 	);
 }
 
