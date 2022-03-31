@@ -13,7 +13,7 @@ const cartReducer = (state, action) =>{
         return {
             items: updatedItems,
             totalAmount : updatedTotalAmount
-        }
+        };
 
     }
 
@@ -40,7 +40,7 @@ const CartProvider = props =>{
         items:cartState.items,
         totalAmount : cartState.totalAmount,
         addItem: addItemHelper , 
-        removeItem:removeItemHelper 
+        removeItem: removeItemHelper 
     };
 
     return (
