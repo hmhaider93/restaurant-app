@@ -3,6 +3,7 @@ import "./App.css";
 import Cart from "./components/Cart/Cart";
 import Meals from "./components/Meals/Meals";
 import Header from "./components/UI/Header";
+import CartProvider from "./store/CartProvider";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
 
 
 	return (
-		<>
+		<CartProvider>
 		{showModal && <Cart onClick={cartButtonClickHandler}/>}
 		<div className="App">
 			<header className="App-header">
@@ -29,7 +30,7 @@ function App() {
 					<Meals />
 				</main>
 		</div>
-		</>
+		</CartProvider>
 	);
 }
 
